@@ -1,14 +1,16 @@
-import Profile from '../components/Profile';
-import SW from '../components/SW';
+import React from 'react';
+import Header from '../containers/Header';
+import Sidebar from '../containers/Sidebar';
+import Home from '../containers/Home';
+import Footer from '../containers/Footer';
 
-const Home = () => (
-    <div>
-        <Profile/>
-        <h1>
-            Hello World!
-        </h1>
-        <SW/>
-    </div>
+const App = () => (
+  <>
+    <Header />
+    <Sidebar />
+    <Home />
+    <Footer />
+  </>
 );
 
-export default Home;
+export default App;

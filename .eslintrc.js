@@ -6,7 +6,7 @@ module.exports = {
   },
   'extends': [
     'plugin:react/recommended',
-    'google',
+    'airbnb',
   ],
   'globals': {
     'Atomics': 'readonly',
@@ -23,7 +23,9 @@ module.exports = {
   'plugins': [
     'react',
     '@typescript-eslint',
+    'pretiier',
   ],
   'rules': {
+    'react/prop-types': 'off'
   },
 };

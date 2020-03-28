@@ -45,7 +45,7 @@ class App extends NextApp<Props> {
           </Navigation>
         </Drawer>
         <Content>
-          <div style={{width: '95%', margin: 'auto'}}>
+          <div style={{ width: '95%', margin: 'auto' }}>
             <Component {...pageProps} />
           </div>
         </Content>

@@ -11,7 +11,8 @@ const Home: React.FC<{}> = () => {
     createMockClient()
       .getPosts()
       .then((posts) => setPosts(posts));
-  });
+  }, []);
+
   return (
     <Grid>
       {posts.length == 0 ? (

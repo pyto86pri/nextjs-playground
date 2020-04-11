@@ -1,11 +1,24 @@
 import React from 'react';
-import SearchPosts from '../components/SearchPosts';
+import { Drawer, Navigation, Header, Textfield } from 'react-mdl';
 
-const Header: React.FC<{}> = () => (
+const CustomHeader: React.FC<{}> = () => (
   <>
-    header だよ
-    <SearchPosts />
+    <Header title="pyto86's Blog">
+      <Textfield
+        value=""
+        onChange={() => {}}
+        label="Search"
+        expandable
+        expandableIcon="search"
+      />
+    </Header>
+    <Drawer title="Title">
+      <Navigation>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </Navigation>
+    </Drawer>
   </>
 );
 
-export default Header;
+export default CustomHeader;

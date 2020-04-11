@@ -1,5 +1,10 @@
 export type PostEntity = {
-  id: string;
-  title: string;
-  content: string;
+  slug: string
+  id: string
+  title: string
+  summary: string
+  content: string
+  isPublished: boolean
+  publishedAt: string
+  tags: string[]
 };

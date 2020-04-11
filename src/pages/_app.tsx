@@ -2,14 +2,9 @@ import * as React from 'react';
 import NextApp, { AppContext } from 'next/app';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
-import {
-  Layout,
-  Drawer,
-  Header,
-  Content,
-  Navigation,
-  Textfield,
-} from 'react-mdl';
+import { Layout, Content } from 'react-mdl';
+import Header from '../containers/Header';
+import Footer from '../containers/Footer';
 
 interface Props {
   pageProps: any;
@@ -27,28 +22,13 @@ class App extends NextApp<Props> {
     const { pageProps, Component } = this.props;
     return (
       <Layout fixedHeader>
-        <Header title="header">
-          <Textfield
-            value=""
-            onChange={() => {}}
-            label="Search"
-            expandable
-            expandableIcon="search"
-          />
-        </Header>
-        <Drawer title="Title">
-          <Navigation>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-          </Navigation>
-        </Drawer>
+        <Header />
         <Content>
           <div style={{ width: '95%', margin: 'auto' }}>
             <Component {...pageProps} />
           </div>
         </Content>
+        <Footer />
       </Layout>
     );
   }

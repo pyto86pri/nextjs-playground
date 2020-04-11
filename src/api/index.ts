@@ -3,7 +3,7 @@ import {
   CreateClientParams,
   createClient as createContentfulClient,
 } from 'contentful';
-import { PostEntry, PostEntity } from '../entities/Post';
+import { PostEntity } from '../entities/Post';
 
 export interface ContentfulClient {
   getPosts(): Promise<PostEntity[]>;

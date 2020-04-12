@@ -10,7 +10,7 @@ const Post: React.FC<{}> = () => {
   const slug = router.query.slug as string;
 
   const [post, setPost] = useState<PostEntry>();
-  const contentHtml = useCallback((): {__html: string} => ({
+  const htmlContentCallback = useCallback((): {__html: string} => ({
     __html: post ? marked(post.fields.content): ""
   }), [post]);
 
@@ -38,7 +38,7 @@ const Post: React.FC<{}> = () => {
             <p>{tag}</p>
           )}
           <hr/>
-          <div dangerouslySetInnerHTML={contentHtml()} />
+          <div dangerouslySetInnerHTML={htmlContentCallback()} />
         </>
       ) : (
         <Spinner style={{ margin: 'auto' }} />

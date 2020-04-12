@@ -3,24 +3,36 @@ import {
   CreateClientParams,
   createClient as createContentfulClient,
 } from 'contentful';
-import { PostEntity } from '../entities/Post';
+import { PostField, PostEntry } from '../entities/Post';
+import { sleep } from '../__test__/util';
 
 export interface ContentfulClient {
-  getPosts(): Promise<PostEntity[]>;
+  getPosts(): Promise<PostEntry[]>;
+  searchPosts(query: string): Promise<PostEntry[]>;
 }
 
-/**
- *
- */
+enum ContentType {
+  POST = 'post'
+}
+
 class ContentfulClientImpl implements ContentfulClient {
   constructor(private client: ContentfulClientApi) {}
 
-  /**
-   *
-   */
-  async getPosts(): Promise<PostEntity[]> {
-    const posts = await this.client.getEntries<PostEntity>({});
-    return posts.items.map((_) => _.fields);
+  async getPosts(): Promise<PostEntry[]> {
+    const posts = await this.client.getEntries<PostField>({
+      content_type: ContentType.POST,
+      order: '-fields.updatedAt'
+    });
+    console.log(posts);
+    return posts.items;
+  }
+
+  async searchPosts(query: string): Promise<PostEntry[]> {
+    const posts = await this.client.getEntries<PostField>({
+      query
+    });
+    console.log(posts);
+    return posts.items;
   }
 }
 

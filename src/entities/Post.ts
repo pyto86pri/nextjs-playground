@@ -1,10 +1,12 @@
-export type PostEntity = {
-  slug: string
-  id: string
+import { Asset, Sys, Entry } from 'contentful';
+
+export type PostEntry = Entry<PostField>;
+
+export type PostField = {
   title: string
-  summary: string
   content: string
-  isPublished: boolean
-  publishedAt: string
+  image: Asset
+  createdAt: string
+  updatedAt: string
   tags: string[]
 };

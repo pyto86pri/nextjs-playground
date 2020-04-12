@@ -40,7 +40,7 @@ const Home: React.FC<{}> = () => {
           <Spinner style={{ margin: 'auto' }} />
         ) : (
           posts.map((post) => (
-            <Cell key={post.sys.id} col={4}>
+            <Cell key={post.fields.slug} col={4}>
               <Post {...post} />
             </Cell>
           ))

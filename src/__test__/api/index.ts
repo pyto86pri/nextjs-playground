@@ -36,6 +36,7 @@ const mockAsset = (i: number): Asset => ({
 });
 
 const mockPostField = (i: number): PostField => ({
+  slug: `${i}slug`,
   title: `${i}title`.repeat(getRandomInteger(10)),
   content: `${i}content`.repeat(getRandomInteger(1000)),
   image: mockAsset(i),

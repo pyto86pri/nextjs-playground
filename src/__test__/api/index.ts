@@ -46,17 +46,17 @@ const mockPostField = (i: number): PostField => ({
 });
 
 
-class MockContentfulClientImpl implements ContentfulClient {
-  async getPosts(): Promise<PostEntry[]> {
-    await sleep(1000);
-    return Array.from(Array(20).keys()).map((i) => ({
-      sys: mockSys(i),
-      fields: mockPostField(i),
-      update(): any {},
-      toPlainObject(): any {}
-    }));
-  }
-}
+// class MockContentfulClientImpl implements ContentfulClient {
+//   async getPosts(): Promise<PostEntry[]> {
+//     await sleep(1000);
+//     return Array.from(Array(20).keys()).map((i) => ({
+//       sys: mockSys(i),
+//       fields: mockPostField(i),
+//       update(): any {},
+//       toPlainObject(): any {}
+//     }));
+//   }
+// }
 
-export const createMockClient = (): ContentfulClient =>
-  new MockContentfulClientImpl();
+// export const createMockClient = (): ContentfulClient =>
+//   new MockContentfulClientImpl();

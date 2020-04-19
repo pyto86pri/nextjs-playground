@@ -16,7 +16,7 @@ const Post: React.FC<PostProps> = (props) => (
       {props.fields.content.substr(0, 100)}
     </CardText>
     <CardActions border>
-      <Link href="post/[pid]" as={`/post/${props.sys.id}`}>
+      <Link href="post/[pid]" as={`/post/${props.fields.slug}`}>
         <Button colored>続きを読む</Button>
       </Link>
     </CardActions>

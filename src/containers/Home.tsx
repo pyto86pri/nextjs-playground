@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import Post from '../components/Post';
 import { Grid, Cell, Spinner, Textfield } from 'react-mdl';
 import { PostEntry } from '../entities/Post';
-import { createMockClient } from '../__test__/api';
 import { createClient } from '../api';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -37,7 +36,7 @@ const Home: React.FC<{}> = () => {
       </div>
       <Grid>
         {isFetching ? (
-          <Spinner style={{ margin: 'auto' }} />
+           <Spinner style={{ margin: 'auto' }} />
         ) : (
           posts.map((post) => (
             <Cell key={post.fields.slug} col={4}>
